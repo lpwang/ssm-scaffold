@@ -14,8 +14,8 @@
     <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/demo"></property>
-        <property name="username" value="xxx"></property>
-        <property name="password" value="xxx"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="1qaz@WSX"></property>
     </bean>
 
     <!--Sql Session factory-->
