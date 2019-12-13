@@ -16,11 +16,33 @@
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/demo"></property>
         <property name="username" value="root"></property>
         <property name="password" value="1qaz@WSX"></property>
+        <property name="dataSourceProperties">
+            <props>
+                <prop key="cachePrepStmts">true</prop>
+                <prop key="prepStmtCacheSize">250</prop>
+                <prop key="prepStmtCacheSqlLimit">2048</prop>
+                <prop key="useServerPrepStmts">true</prop>
+                <prop key="useLocalSessionState">true</prop>
+                <prop key="rewriteBatchedStatements">true</prop>
+                <prop key="cacheResultSetMetadata">true</prop>
+                <prop key="cacheServerConfiguration">true</prop>
+                <prop key="elideSetAutoCommits">true</prop>
+                <prop key="maintainTimeStats">false</prop>
+            </props>
+        </property>
     </bean>
 
     <!--Sql Session factory-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <!--使用数据库字段下划线与实体的驼峰转换-->
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+                <property name="cacheEnabled" value="true"/>
+                <property name="defaultExecutorType" value="SIMPLE"/>
+            </bean>
+        </property>
     </bean>
 
     <!--mapperScanner 配置-->

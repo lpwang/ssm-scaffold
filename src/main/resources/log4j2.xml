@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <!--配置mybatis打印sql日志-->
+        <!-- mybatis<3.2.0  name可以设置为java.sql-->
+        <!-- mybatis>3.1.0 name可以设置为java.sql 或者namespace属性值的前缀-->
+        <!-- mybatis>=3.2.0  name可以设置为通过logPrefix设置的前缀-->
+        <Logger name="com.xxx.yyy.dao.mapper" level="debug" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <!--spring框架的日志-->
+        <logger name="org.springframework" level="INFO" additivity="false">
+            <AppenderRef ref="Console"/>
+        </logger>
+        <Root level="error">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>
