@@ -47,7 +47,11 @@ ssm-scaffold(ssm脚手架项目)，项目使用springMVC+spring+Mybatis构建。
 
 ### JVM
 
-TODO
+在tomcat家目录的/bin/下创建setenv.sh文件，catalina.sh将会读取到这个配置文件。在setenv.sh文件中配置tomcat的jvm参数。当然也可以在这个配置文件设置其他参数。具体可以参考catalina.sh的定义。如果是大型应用（内存分配超过4g），推进使用G1垃圾回收器。如果不是大型应用，还是使用cms。
+
+```shell
+JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256K -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSConcurrentMTEnabled -XX:ParallelCMSThreads=5 -XX:ConcGCThreads=2 -XX:CMSInitiatingOccupancyFraction=68"
+```
 
 ## Spring扩展
 
