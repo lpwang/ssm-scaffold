@@ -4,6 +4,46 @@
 
 ssm-scaffold(ssm脚手架项目)，项目使用springMVC+spring+Mybatis构建。使用maven进行项目依赖管理。使用war包形式部署到tomcat，或者其他servlet容器。相比springboot的自动配置和内嵌servlet容器。这套框架较为原始和纯净。同时也是学习ssm整合的一套框架。
 
+## 项目结构
+
+```
+├── pom.xml  // maven文件
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── xxx
+│   │   │           └── yyy
+│   │   │               ├── ctrl  // 控制器
+│   │   │               │   └── StudentCtrl.java
+│   │   │               ├── dao  // 持久层
+│   │   │               │   └── StudentDao.java
+│   │   │               ├── entry // 实体
+│   │   │               │   ├── bo // 持久层实体
+│   │   │               │   │   └── StudentBO.java
+│   │   │               │   └── vo  // 请求实体
+│   │   │               │       ├── ResponseEntry.java
+│   │   │               │       └── StudentVO.java
+│   │   │               └── service // 业务层
+│   │   │                   ├── intf
+│   │   │                   │   └── IStudent.java
+│   │   │                   └── StudentService.java
+│   │   ├── resources // 配置文件
+│   │   │   ├── ApplicationContext.xml
+│   │   │   ├── log4j2.xml
+│   │   │   └── SpringMVCServlet.xml
+│   │   └── webapp
+│   │       └── WEB-INF
+│   │           └── web.xml
+│   └── test
+│       └── java
+└── ssm-scaffold.iml
+
+```
+
+
+
 ## 整合方式
 
 - springmvc与spring整合选择了父子容器的方式。
