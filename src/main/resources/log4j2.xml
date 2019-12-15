@@ -10,7 +10,7 @@
         <!-- mybatis<3.2.0  name可以设置为java.sql-->
         <!-- mybatis>3.1.0 name可以设置为java.sql 或者namespace属性值的前缀-->
         <!-- mybatis>=3.2.0  name可以设置为通过logPrefix设置的前缀-->
-        <Logger name="com.xxx.yyy.dao.mapper" level="debug" additivity="false">
+        <Logger name="com.xxx.yyy.dao" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
         </Logger>
         <!--spring框架的日志-->

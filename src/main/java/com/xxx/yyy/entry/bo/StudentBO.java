@@ -1,6 +1,6 @@
-package com.xxx.yyy.dao.entry;
+package com.xxx.yyy.entry.bo;
 
-public class StudentEntry {
+public class StudentBO {
     private int id;
     private String name;
     private int age;
