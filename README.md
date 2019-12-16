@@ -23,6 +23,9 @@ ssm-scaffold(ssm脚手架项目)，项目使用springMVC+spring+Mybatis构建。
 │   │   │               │   ├── bo // 持久层实体
 │   │   │               │   │   └── StudentBO.java
 │   │   │               │   └── vo  // 请求实体
+│   │   │               ├── ext  // spring ioc 扩展
+│   │   │               │   ├── BeanDefinitionRegistryPostProcessorExt.java
+│   │   │               │   └── BeanPostProcessorExt.java
 │   │   │               │       ├── ResponseEntry.java
 │   │   │               │       └── StudentVO.java
 │   │   │               └── service // 业务层
@@ -42,13 +45,11 @@ ssm-scaffold(ssm脚手架项目)，项目使用springMVC+spring+Mybatis构建。
 
 ```
 
-
-
 ## 整合方式
 
 - springmvc与spring整合选择了父子容器的方式。
 - springmvc的HttpMessageConverters使用了，String和JSON。
-
+- spring事务使用注解方式。
 - mybatis使用了MapperScannerConfiguration的mapper扫描的方式。
 - mybatis的sql使用java config的配置方式。
 - 数据库使用的是mysql。
@@ -87,7 +88,7 @@ ssm-scaffold(ssm脚手架项目)，项目使用springMVC+spring+Mybatis构建。
 
 ### JVM
 
-在tomcat家目录的/bin/下创建setenv.sh文件，catalina.sh将会读取到这个配置文件。在setenv.sh文件中配置tomcat的jvm参数。当然也可以在这个配置文件设置其他参数。具体可以参考catalina.sh的定义。如果是大型应用（内存分配超过4g），推进使用G1垃圾回收器。如果不是大型应用，还是使用cms。
+在tomcat家目录的/bin/下创建setenv.sh文件，catalina.sh将会读取到这个配置文件。在setenv.sh文件中配置tomcat的jvm参数。当然也可以在这个配置文件设置其他参数。具体可以参考catalina.sh的定义。如果是大型应用（内存分配超过4g），推进使用G1垃圾回收器。如果不是大型应用，还是使用cms，以下是我的cms的配置。
 
 ```shell
 JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256K -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSConcurrentMTEnabled -XX:ParallelCMSThreads=5 -XX:ConcGCThreads=2 -XX:CMSInitiatingOccupancyFraction=68"
@@ -95,5 +96,10 @@ JAVA_OPTS="-Xms1024m -Xmx1024m -Xss256K -XX:+UseConcMarkSweepGC -XX:+UseParNewGC
 
 ## Spring扩展
 
-TODO
+### IOC容器创建时的扩展
 
+BeanDefinitaion扩展编写在：```BeanDefinitionRegistryPostProcessorExt.java```
+
+BeanPostProcessor扩展编写在：```BeanPostProcessorExt.java```
+
+InitializingBean扩展编写在：```StudentService.java```
