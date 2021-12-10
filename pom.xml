@@ -20,7 +20,7 @@
         <version.HikariCP>3.4.1</version.HikariCP>
         <version.mysql.connector.java>5.1.48</version.mysql.connector.java>
         <version.slf4j-api>1.7.29</version.slf4j-api>
-        <version.log4j2>2.12.1</version.log4j2>
+        <version.log4j2>2.15.0</version.log4j2>
     </properties>
 
     <dependencies>
