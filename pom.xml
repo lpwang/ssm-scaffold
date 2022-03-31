@@ -11,7 +11,7 @@
 
     <properties>
         <version.spring>5.1.12.RELEASE</version.spring>
-        <version.spring.mvc>5.1.12.RELEASE</version.spring.mvc>
+        <version.spring.mvc>5.3.18</version.spring.mvc>
         <version.spring.jdbc>5.1.12.RELEASE</version.spring.jdbc>
         <version.jackson>1.9.13</version.jackson>
         <version.jackson.databind>2.10.1</version.jackson.databind>
