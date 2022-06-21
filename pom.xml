@@ -18,7 +18,7 @@
         <version.mybatis>3.5.3</version.mybatis>
         <version.mybatis.spring>2.0.3</version.mybatis.spring>
         <version.HikariCP>3.4.1</version.HikariCP>
-        <version.mysql.connector.java>5.1.48</version.mysql.connector.java>
+        <version.mysql.connector.java>8.0.28</version.mysql.connector.java>
         <version.slf4j-api>1.7.29</version.slf4j-api>
         <version.log4j2>2.12.1</version.log4j2>
     </properties>
