@@ -14,7 +14,7 @@
         <version.spring.mvc>5.1.12.RELEASE</version.spring.mvc>
         <version.spring.jdbc>5.1.12.RELEASE</version.spring.jdbc>
         <version.jackson>1.9.13</version.jackson>
-        <version.jackson.databind>2.10.1</version.jackson.databind>
+        <version.jackson.databind>2.13.4.1</version.jackson.databind>
         <version.mybatis>3.5.3</version.mybatis>
         <version.mybatis.spring>2.0.3</version.mybatis.spring>
         <version.HikariCP>3.4.1</version.HikariCP>
